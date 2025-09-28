@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Robabeh Bashiri — Portfolio</title>
+  <style>
+    :root{
+      --bg:#f7f8fb;
+      --card:#ffffff;
+      --accent:#0066cc;
+      --muted:#6b7280;
+      --radius:10px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:#0f172a;
+      line-height:1.5;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    /* Header */
+    header{
+      background:linear-gradient(90deg, rgba(255,255,255,0.9), rgba(255,255,255,0.8));
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid #e6e9ef;
+      position:sticky;
+      top:0;
+      z-index:50;
+    }
+    .container{
+      max-width:1000px;
+      margin:0 auto;
+      padding:1rem;
+      display:flex;
+      align-items:center;
+      gap:1rem;
+      justify-content:space-between;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:.75rem;
+      font-weight:700;
+      font-size:1.05rem;
+    }
+    .brand .initial{
+      width:40px;height:40px;border-radius:8px;background:var(--accent);color:#fff;
+      display:flex;align-items:center;justify-content:center;font-weight:700;
+      box-shadow:0 2px 6px rgba(0,0,0,0.08);
+    }
+
+    nav{
+      display:flex;
+      gap:1rem;
+      align-items:center;
+    }
+    nav a{
+      text-decoration:none;color:var(--muted);padding:.5rem .6rem;border-radius:8px;
+      font-weight:600;font-size:.95rem;
+    }
+    nav a:hover{background:#eef4ff;color:var(--accent)}
+    .cta{
+      background:var(--accent);color:#fff;padding:.5rem .8rem;border-radius:8px;text-decoration:none;font-weight:700;
+    }
+    .menu-toggle{
+      display:none;
+      background:transparent;border:0;padding:.4rem;border-radius:6px;
+    }
+
+    /* Hero */
+    #hero{
+      padding:3.5rem 1rem;
+      text-align:center;
+    }
+    #hero .inner{
+      max-width:900px;margin:0 auto;
+    }
+    h1{margin:0 0 .5rem;font-size:2rem}
+    p.lead{margin:0 auto 1.25rem;color:var(--muted);max-width:720px}
+
+    /* Sections */
+    main{max-width:1000px;margin:0 auto;padding:1rem}
+    section.card{
+      background:var(--card);padding:1.25rem;border-radius:var(--radius);
+      box-shadow:0 8px 20px rgba(15,23,42,0.04);margin-bottom:1rem;
+    }
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-items:start}
+    .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
+
+    .skill{
+      background:#fafbff;padding:.75rem;border-radius:10px;border:1px solid #eef2ff;
+    }
+    .skill h4{margin:.25rem 0;font-size: .95rem}
+    .bar{
+      height:8px;background:#e9eefb;border-radius:999px;overflow:hidden;margin-top:.5rem;
+    }
+    .bar > i{
+      display:block;height:100%;background:linear-gradient(90deg,var(--accent),#66a6ff);width:60%;
+    }
+
+    /* Footer */
+    footer{max-width:1000px;margin:0 auto;padding:1rem;color:var(--muted);font-size:.9rem}
+
+    /* Responsive */
+    @media (max-width:700px){
+      .two-col{grid-template-columns:1fr}
+      nav{display:none}
+      .menu-toggle{display:inline-flex}
+      .mobile-nav{display:none}
+      .mobile-nav.open{display:flex;flex-direction:column;gap:.5rem;margin-top:.5rem}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="brand" aria-label="Site brand">
+  <img id="avatarImg" src="assets/avatar.svg" alt="Robabeh Bashiri avatar" style="width:48px;height:48px;border-radius:8px;object-fit:cover;box-shadow:0 2px 6px rgba(0,0,0,0.08)" />
+        <div>
+          <div style="font-size:.95rem">Robabeh Bashiri</div>
+          <div style="font-size:.78rem;color:var(--muted);margin-top:2px">Data Science • ML • Analytics</div>
+        </div>
+      </div>
+
+      <nav aria-label="Main navigation">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a class="cta" href="#contact">Contact</a>
+      </nav>
+
+      <button class="menu-toggle" aria-label="Toggle menu" id="menuBtn">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke="#0f172a" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="container mobile-nav" id="mobileNav" style="display:none">
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a class="cta" href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <section id="hero" aria-labelledby="hero-title">
+    <div class="inner">
+      <h1 id="hero-title">Welcome — I'm Robabeh Bashiri</h1>
+      <p class="lead">I build data-driven solutions and turn messy data into clear, actionable insights. I specialize in data science, statistical modeling, and machine learning for real-world problems.</p>
+      <p>
+        <a class="cta" href="#about" style="margin-right:.5rem">Learn more</a>
+        <a href="#skills" style="color:var(--muted);font-weight:700">See skills →</a>
+      </p>
+    </div>
+  </section>
+
+  <main>
+    <section id="about" class="card" aria-labelledby="about-title">
+      <h2 id="about-title">About Me</h2>
+      <div class="two-col" style="margin-top:.75rem">
+        <div>
+          <p>Hello! I'm Robabeh Bashiri, Ph.D., a chemist and project manager with over 10 years of experience analyzing complex data in materials science, catalysis, biocatalysis, renewable energy, and solar hydrogen production. I have a strong record of conducting research, interpreting data, and writing detailed technical reports that support innovation in sustainable energy and materials development.</p>
+
+          <p>Building on my scientific background, I am now transitioning into data science to merge chemistry expertise with data-driven solutions. I am skilled in SQL, Python, Excel, and Tableau, applying these tools to clean, process, visualize, and interpret large datasets efficiently. My experience has shaped me into a detail-oriented, motivated, and adaptable professional who thrives on solving challenging problems.</p>
+
+          <p>I am especially passionate about using data science to improve energy efficiency and environmental outcomes, and I’m eager to contribute to projects that make a tangible impact on sustainability.</p>
+
+          <h3>Core Skills &amp; Strengths</h3>
+          <ul style="margin:0;padding-left:1.1rem;color:var(--muted)">
+            <li>10+ years of scientific data analysis &amp; research</li>
+            <li>Expertise in catalyst development &amp; renewable energy (including solar hydrogen)</li>
+            <li>Proficient in Python, SQL, Tableau, and Excel</li>
+            <li>Strong technical writing &amp; project management background</li>
+            <li>Passionate about continuous learning &amp; tackling new challenges</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="margin-top:0">Quick facts</h3>
+          <ul style="margin:0;padding-left:1.1rem;color:var(--muted)">
+            <li>Ph.D. in Chemistry</li>
+            <li>10+ years in materials &amp; catalysis research</li>
+            <li>Experience with data tools: Python, SQL, Tableau, Excel</li>
+            <li>Technical writing, reporting, and project management</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="card" aria-labelledby="skills-title">
+      <h2 id="skills-title">Skills — Data Science &amp; ML</h2>
+      <p style="color:var(--muted);margin-top:.25rem">A selection of tools and topics I work with.</p>
+
+      <div class="skills-grid" style="margin-top:.75rem">
+        <div class="skill">
+          <h4>Programming &amp; Analysis</h4>
+          <div style="color:var(--muted);font-size:.85rem;margin-top:.45rem">Python (pandas, numpy, scikit-learn), SQL (Postgres, BigQuery), Excel</div>
+        </div>
+
+        <div class="skill">
+          <h4>Machine Learning</h4>
+          <div style="color:var(--muted);font-size:.85rem;margin-top:.45rem">Regression, classification, clustering, model validation</div>
+        </div>
+
+        <div class="skill">
+          <h4>Deep Learning</h4>
+          <div style="color:var(--muted);font-size:.85rem;margin-top:.45rem">TensorFlow, PyTorch</div>
+        </div>
+
+        <div class="skill">
+          <h4>Data Engineering</h4>
+          <div style="color:var(--muted);font-size:.85rem;margin-top:.45rem">ETL, pipelines, cloud storage</div>
+        </div>
+
+        <div class="skill">
+          <h4>Visualization</h4>
+          <div style="color:var(--muted);font-size:.85rem;margin-top:.45rem">Tableau, Matplotlib, Seaborn, Plotly</div>
+        </div>
+
+        <div class="skill">
+          <h4>Model Deployment</h4>
+          <div style="color:var(--muted);font-size:.85rem;margin-top:.45rem">Docker, APIs, monitoring</div>
+        </div>
+
+        <div class="skill">
+          <h4>Statistics &amp; Experimentation</h4>
+          <div style="color:var(--muted);font-size:.85rem;margin-top:.45rem">Hypothesis testing, A/B testing</div>
+        </div>
+
+        <div class="skill">
+          <h4>Collaboration Tools</h4>
+          <div style="color:var(--muted);font-size:.85rem;margin-top:.45rem">Git/GitHub, Jupyter Notebook, VS Code</div>
+        </div>
+      </div>
+
+      <div style="margin-top:1rem">
+        <h3 style="margin:0 0 .35rem">Domain Expertise</h3>
+        <ul style="margin:0;padding-left:1.1rem;color:var(--muted)">
+          <li>Hydrogen energy data &amp; solar energy systems</li>
+          <li>Material design &amp; catalyst development</li>
+          <li>Renewable energy analysis and sustainability research</li>
+        </ul>
+
+        <h3 style="margin-top:.75rem;margin-bottom:.35rem">Project Management</h3>
+        <ul style="margin:0;padding-left:1.1rem;color:var(--muted)">
+          <li>Technical reporting</li>
+          <li>Workflow optimization</li>
+          <li>PMP-certified</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="card" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <p style="color:var(--muted);margin-top:.25rem">Email: <a href="mailto:robabeh.bashiri@gmail.com">robabeh.bashiri@gmail.com</a> — LinkedIn: <a href="https://www.linkedin.com/in/rbashiri" target="_blank" rel="noopener">www.linkedin.com/in/rbashiri</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="padding:0">
+      <div style="font-size:.9rem;color:var(--muted)">© <span id="year"></span> Robabeh Bashiri — Built with plain HTML & CSS</div>
+    </div>
+  </footer>
+
+  <script>
+    // Small JS for mobile menu, footer year, and avatar preference
+    (function(){
+      var menuBtn = document.getElementById('menuBtn');
+      var mobileNav = document.getElementById('mobileNav');
+      menuBtn.addEventListener('click', function(){
+        if(!mobileNav.classList.contains('open')){
+          mobileNav.classList.add('open');
+          mobileNav.style.display = 'flex';
+        } else {
+          mobileNav.classList.remove('open');
+          mobileNav.style.display = 'none';
+        }
+      });
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // If you upload a raster avatar to assets (avatar.png/jpg/jpeg/webp), prefer it over the SVG
+      try{
+        var avatar = document.getElementById('avatarImg');
+        var candidates = ['assets/avatar.png','assets/avatar.jpg','assets/avatar.jpeg','assets/avatar.webp'];
+        (function tryNext(i){
+          if(i>=candidates.length) return;
+          var img = new Image();
+          img.onload = function(){ avatar.src = candidates[i]; };
+          img.onerror = function(){ tryNext(i+1); };
+          img.src = candidates[i];
+        })(0);
+      } catch(e){ /* ignore in old browsers */ }
+    })();
+  </script>
+</body>
+</html>
