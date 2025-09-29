@@ -88,6 +88,14 @@
       background:var(--card);padding:1.25rem;border-radius:var(--radius);
       box-shadow:0 8px 20px rgba(15,23,42,0.04);margin-bottom:1rem;
     }
+    /* Justify About Me paragraphs for a clean, readable block look */
+    #about p {
+      text-align: justify;
+      text-justify: inter-word;
+      hyphens: auto;
+      /* Keep the last line left-aligned to avoid large gaps */
+      text-align-last: left;
+    }
     .two-col{display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-items:start}
     .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
 
